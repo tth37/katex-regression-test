@@ -34,12 +34,13 @@ testCases.forEach((markdown) => {
     const tokens = getKatexTokens(markdown, katexExtension)
     const legacyTokens = getKatexTokens(markdown, legacyKatexExtension)
 
-    console.log('tokens', tokens)
-    console.log('legacyTokens', legacyTokens)
+    // console.log('tokens', tokens)
+    // console.log('legacyTokens', legacyTokens)
 
     if (tokens.length !== legacyTokens.length) {
         pass = false
         console.error('  MISMATCH: Token count differs!')
+        console.error('    tokens:', tokens)
     } else {
         for (let i = 0; i < tokens.length; i++) {
             const token = tokens[i]

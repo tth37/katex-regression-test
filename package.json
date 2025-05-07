@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
+    "test:regression": "node test-regression.js",
+    "test:cjk": "node test-cjk.js",
     "generate": "python generate.py"
   },
   "keywords": [],
@@ -13,6 +14,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
   "dependencies": {
+    "katex": "^0.16.22",
     "marked": "^15.0.11"
   }
 }

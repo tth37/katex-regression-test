@@ -8,11 +8,22 @@ importers:
 
   .:
     dependencies:
+      katex:
+        specifier: ^0.16.22
+        version: 0.16.22
       marked:
         specifier: ^15.0.11
         version: 15.0.11
 
 packages:
+
+  commander@8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
+
+  katex@0.16.22:
+    resolution: {integrity: sha512-XCHRdUw4lf3SKBaJe4EvgqIuWwkPSo9XoeO8GjQW94Bp7TWv9hNhzZjZ+OH9yf1UmLygb7DIT5GSFQiyt16zYg==}
+    hasBin: true
 
   marked@15.0.11:
     resolution: {integrity: sha512-1BEXAU2euRCG3xwgLVT1y0xbJEld1XOrmRJpUwRCcy7rxhSCwMrmEu9LXoPhHSCJG41V7YcQ2mjKRr5BA3ITIA==}
@@ -20,5 +31,11 @@ packages:
     hasBin: true
 
 snapshots:
+
+  commander@8.3.0: {}
+
+  katex@0.16.22:
+    dependencies:
+      commander: 8.3.0
 
   marked@15.0.11: {}

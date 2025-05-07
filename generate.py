@@ -22,7 +22,6 @@ Use a variety of LaTeX delimiters:
 - Inline math: $...$ or \\(...\\)
 - Display math: $$...$$ or \\[...\\]
 - Chemical equations: \\ce{...}
-- Physical units: \\pu{...}
 - Equation environments: \\begin{equation}...\\end{equation}
 
 Make the content complex with:
@@ -30,19 +29,14 @@ Make the content complex with:
 - Math expressions at start/end of paragraphs
 - Different delimiter types in same paragraph
 - Complex mathematical notation
-- To test the robustness of the parser, you can randomly include some errors:
-  - Missing closing delimiters
-  - Missing whitespaces between delimiters and regular text
 
-DO NOT use Chinese, Japanese, or Korean characters.
+PLEASE WRITE REGULAR TEXT using Chinese, Japanese, or Korean.
 
 Example format:
 
-The quadratic formula$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ solves equations of form \\[ax^2 + bx + c = 0\\]. 
-For \\ce{H2O}, molar mass is \\pu{18.015 g/mol}. Consider:
-\\begin{equation}
-\\int_0^\\infty e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}
-\\end{equation}
+在数学中，$E=mc^2$是一个著名的方程式。\\[ \\int_0^1 x^2 \\, dx = \\frac{1}{3} \\]这个方程描述了能量和质量之间的关系。\\ce{H2O}是水的化学式。
+数学の世界では、$a^2 + b^2 = c^2$という有名な方程式があります、\\[ \\sum_{i=1}^{n} i = \\frac{n(n+1)}{2} \\]これは自然数の和を表しています。\\ce{CO2}は二酸化炭素の化学式で。
+수학에서, $\\frac{a}{b} = c$는 비율을 나타내는 유명한 방정식입니다.\\[ \\sqrt{x^2 + y^2} = z \\]이 방정식은 피타고라스의 정리를 설명합니다.\\ce{NaCl}은 소금의 화학식이며.
 
 
 Now generate 1 new unique paragraph:"""
@@ -74,10 +68,10 @@ Now generate 1 new unique paragraph:"""
 
 
 if __name__ == "__main__":
-    test_cases = generate_test_cases(50)
+    test_cases = generate_test_cases(20)
 
     # Save to JSON file
-    with open("test-cases.json", "w") as f:
-        json.dump(test_cases, f, indent=2)
+    with open("test-cases-cjk.json", "w", encoding='utf-8') as f:
+        json.dump(test_cases, f, indent=2, ensure_ascii=False)
 
     print(f"Successfully generated {len(test_cases)} test cases in test-cases.json")
